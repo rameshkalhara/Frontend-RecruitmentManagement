@@ -1,3 +1,4 @@
 # Frontend-RecruitmentManagement
-//bbb
-//bbb
+npm install
+<br>
+npm run dev
