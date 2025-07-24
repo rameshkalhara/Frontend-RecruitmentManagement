@@ -1,104 +1,184 @@
-body {
+/* SignIn.css */
+* {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 .signin-container {
   display: flex;
   height: 100vh;
   width: 100%;
+  
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
 }
 
+/* Left Panel - 50% width */
 .left-panel {
-  flex: 1;
-  background-color: #e50914;
+  width: 50%;
+  background: #e71725;
   color: white;
-  padding: 40px;
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0px;
+  /* Curved right edge */
+ 
+  z-index: 1;
 }
 
 .logo {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  font-size: 28px;
-  font-weight: bold;
-  background: #c9000e;
-  padding: 5px 15px;
-  border-radius: 4px;
+  align-self: left;
+  margin-top: -8%;
+  margin-left: -2%;
 }
 
-.logo .it {
-  background: white;
-  color: #c9000e;
-  padding: 2px 5px;
-  border-radius: 4px;
+.logo img {
+  height: 200px;
+  width: auto;
+  pointer-events: none;
+
 }
 
+/* Center the RMS text */
 .rms {
-  font-size: 64px;
-  font-weight: bold;
-  margin-top: 50px;
+  font-size: 128px;
+  font-family: 'Kanit', sans-serif; 
+  font-weight: 800;
+  letter-spacing: 0px;
+  line-height: 70px;
+  align-self: center;
+  margin: auto 0;
 }
 
 .subtitle {
-  position: absolute;
-  bottom: 30px;
-  font-weight: 600;
+  font-size: 30px;
+  font-family: 'Kanit', sans-serif; 
+  font-weight: 800;
+  letter-spacing: 0%;
+  line-height: 70px;
+  align-self: center;
+  padding-bottom: 10px;
 }
 
+/* Right Panel - 40% width */
 .right-panel {
-  flex: 1;
-  background-color: white;
+  width: 50%;
+  background: #f5f5f5;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 40px;
+  position: relative;
+  z-index: 2;
+  margin-left: 0%; /* Overlap to hide the curve gap */
 }
 
 .signin-title {
-  color: #e50914;
-  font-size: 36px;
-  margin-bottom: 20px;
+  font-size: 96px;
+  font-family: 'Kanit', sans-serif; 
+  font-weight: 700;
+  color: #e71725;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  text-align: center;
+  line-height: 20px;
+  letter-spacing: 0%;
 }
 
 .signin-box {
-  background-color: #e50914;
-  padding: 30px;
-  border-radius: 10px;
-  width: 300px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: #e71725;
+  padding: 40px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 450px;
+  max-height: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .input-field {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
+  padding: 15px 20px;
   border: none;
-  border-radius: 5px;
-  background-color: #f8bcbc;
-  font-size: 16px;
+  border-radius: 8px;
+  font-size: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #333;
+  outline: none;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.input-field::placeholder {
+  color: #666;
+  font-weight: 500;
+}
+
+.input-field:focus {
+  background: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .login-btn {
-  width: 100%;
-  padding: 10px;
-  background-color: white;
-  color: black;
-  font-weight: bold;
+  padding: 15px;
+  background: white;
+  color: #000000;
+  font-family: 'Kanit', sans-serif;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
+  font-size: 32px;
+  font-weight: 400;
   cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 5px;
+}
+
+.login-btn:hover {
+  background: rgba(255, 255, 255, 0.8);;
+  transform: translateY(-1px);
+ 
+}
+
+.login-btn:active {
+  transform: translateY(0);
+  
 }
 
 .forgot-password {
   color: white;
-  font-size: 14px;
   text-align: center;
-  margin-top: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 10px 0 0 0;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
 }
 
+.forgot-password:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
