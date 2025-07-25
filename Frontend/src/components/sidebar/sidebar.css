@@ -1,0 +1,156 @@
+/* Sidebar Container */
+.sidebar {
+  width: 256px;
+  height: 100vh;
+  background-color: #e71725; /* Red-500 */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Kanit', sans-serif; 
+  font-weight: 800;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Section */
+.sidebar-header {
+  padding: 24px 24px 24px 24px;
+}
+
+.sidebar-brand {
+  display: flex;
+  margin-top: -30px;
+  margin-bottom: 8px;
+  
+}
+
+.logo-image {
+  width: 100px;
+  height: 100px;
+}
+
+
+.sidebar-title {
+  font-size: 42px;
+  font-family: 'Kanit', sans-serif;
+  line-height: 70px;
+  font-weight: 800;
+  margin: 0;
+  line-height: 1;
+  margin-top: -40px;
+  align-self: center;
+  margin-left: 60px;
+}
+
+/* User Section */
+.sidebar-user {
+  padding: 20px 24px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: -20px;
+}
+
+.user-avatar {
+  width: 80px;
+  height: 80px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-icon {
+  width: 55px;
+  height: 55px;
+  color: #666;
+}
+
+.user-name {
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 70px;
+  font-family: 'Kanit', sans-serif;
+  color: white;
+  margin-left: 20px;
+}
+
+/* Navigation */
+.sidebar-nav {
+  flex: 1;
+  padding: 0;
+  margin-top: 8px;
+}
+
+.nav-item {
+  width: 100%;
+  text-align: left;
+  padding: 12px 18px;
+  font-size: 16px;
+  font-weight: 800;
+  font-family: 'Kanit', sans-serif;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: block;
+  margin-left: 25px;
+}
+
+.nav-item:hover {
+  transform: translateX(2px);
+  transform: translateY(2px);
+  font-size: 25px;
+}
+
+.nav-item-active {
+  font-weight: 800;
+  font-size: 22px;
+}
+
+.nav-item:focus {
+  outline: none;
+  
+}
+
+/* Footer/Logout Section */
+.sidebar-footer {
+  padding: 24px;
+  margin-top: auto;
+}
+
+.logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-family: 'Kanit', sans-serif;
+  font-weight: 800;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 12px 0;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  width: 100%;
+  justify-content: flex-start;
+  margin-left: 40px;
+
+}
+
+.logout-btn:hover {
+  transform: translateX(2px);
+}
+
+
+.logout-icon {
+  width: 20px;
+  height: 20px;
+}
+
+
