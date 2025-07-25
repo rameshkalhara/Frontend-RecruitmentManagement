@@ -1,40 +1,29 @@
 import React from "react";
-import { Home, Users, Search, FileText, User, FileCheck, UserCheck } from 'lucide-react';
-
-
+import ORELITLOGO from "../../assets/orelit-logo.png";
 import './HomePage.css'; // If using plain CSS
 
 const HomePage = () => {
-  const items = [
-    { label: 'Departments', icon: '🏠' },
-    { label: 'Users', icon: '👥' },
-    { label: 'Vacancies', icon: '💬' },
-    { label: 'Application', icon: '📄' },
-    { label: 'Job Profile', icon: '🧑‍💼' },
-    { label: 'Logs', icon: '📁' },
-    { label: 'Profile', icon: '👤' },
-    { label: 'Candidates', icon: '🙋‍♂' },
-  ];
-
   return (
-    <div className="dashboard-container">
-      <header className="dashboard-header">
-        <div className="branding">
-          <span className="logo">OREL <span className="logo-it">IT</span></span>
-          <div className="rms">RMS<br /><small>Recruitment Management System</small></div>
+    <div className="homepage">
+      <header className="header">
+      <div class="flex-container">
+        <div className="image-container">
+          <img src={ORELITLOGO} alt="Background" className="full-width-image" />
         </div>
-        <button className="logout-btn">Log Out</button>
+        <div className="rms-TextContainer">
+          <h1 className="rms-heading">RMS</h1>
+          <p className="rms-para">Recruitment Management System</p>
+        </div>
+        <div className="logout-container">
+          <h3 className="logoutText">Logout</h3>
+        </div>
+      </div>
+
+
       </header>
-
-      <div className="grid-container">
-  {items.map(({ label, icon }) => (
-    <div key={label} className={`grid-item ${label === 'Logs' ? 'highlight' : ''}`}>
-      <div className="icon">{icon}</div>
-      <div className="label">{label}</div>
-    </div>
-  ))}
-</div>
-
+      <main className="body">
+        <p>This is the body section with white background.</p>
+      </main>
     </div>
   );
 };

@@ -1,83 +1,73 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  .dashboard-container {
-    text-align: center;
-  }
-  
-  .dashboard-header {
-    background: #d50000;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    align-items: center;
-  }
-  
-  .branding {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo {
-    font-size: 30px;
-    font-weight: bold;
-    margin-right: 20px;
-  }
-  
-  .logo-it {
-    background: white;
-    color: #d50000;
-    padding: 2px 6px;
-    border-radius: 4px;
-  }
-  
-  .rms {
-    font-size: 20px;
-    text-align: left;
-  }
-  
-  .logout-btn {
-    background: none;
-    border: none;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 180px);
-    gap: 20px;
-    justify-content: center;
-    margin-top: 40px;
-  }
-  
-  .grid-item {
-    background: #f5f5f5;
-    border-radius: 10px;
-    padding: 25px 10px;
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
-    transition: 0.3s;
-  }
-  
-  .grid-item:hover {
-    transform: translateY(-5px);
-    cursor: pointer;
-  }
-  
-  .icon {
-    font-size: 30px;
-    margin-bottom: 10px;
-  }
-  
-  .label {
-    font-weight: bold;
-  }
-  
-  .highlight {
-    border: 2px solid #a259ff;
-  }
+/* HomePage.css */
+
+.homepage {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: #e71725; /* red */
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.body {
+  background-color: rgb(255, 255, 255);
+  flex: 1; /* Takes up the remaining vertical space */
+  padding: 20px;
+  font-size: 18px;
+}
+
+.flex-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+/* Image container */
+.image-container {
+  width: 120px;
+}
+
+.full-width-image {
+  width: 100%;
+  height: auto;
+}
+
+/* RMS text */
+.rms-TextContainer {
+  text-align: center;
+  flex: 1;
+}
+
+.rms-heading {
+  font-weight: 800;
+  font-size: 48px;
+  color: #ffffff;
+  margin: 0;
+}
+
+.rms-para {
+  color: #ffffff;
+  font-size: 18px;
+  margin-top: 4px;
+}
+
+/* Logout */
+.logout-container {
+  text-align: right;
+}
+
+.logoutText {
+  color: #ffffff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
