@@ -1,31 +1,32 @@
 import React, { useState } from "react";
 import { Search, Upload, Edit, Eye } from "lucide-react";
 import "./Application.css";
-
+import UploadModal from "../popup/uploadApplication/uploadApplication.jsx";
 const Application = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [isUploadModalOpen, setIsUploadModalOpen] = useState(false);
   const [applications] = useState([
     {
       id: "001",
       name: "Name",
       dptHead: "Dpt Head",
       noOfUsers: 20,
-      isActive: true
+      isActive: true,
     },
     {
       id: "002",
       name: "Name",
       dptHead: "Dpt Head",
       noOfUsers: 20,
-      isActive: true
+      isActive: true,
     },
     {
       id: "003",
       name: "Name",
       dptHead: "Dpt Head",
       noOfUsers: 20,
-      isActive: true
-    }
+      isActive: true,
+    },
   ]);
 
   const handleSearch = (e) => {
@@ -33,7 +34,22 @@ const Application = () => {
   };
 
   const handleUpload = () => {
-    console.log("Upload clicked");
+    setIsUploadModalOpen(true);
+  };
+
+  const handleUploadSubmit = (data) => {
+    // Handle the upload logic here
+    console.log("Upload data:", data);
+    // Add new application to the list
+    const newApplication = {
+      id: `00${applications.length + 1}`,
+      name: data.jobRole,
+      dptHead: "New Role",
+      noOfUsers: 0,
+      isActive: true,
+    };
+    setApplications([...applications, newApplication]);
+    setIsUploadModalOpen(false);
   };
 
   const handleEdit = (id) => {
@@ -48,9 +64,10 @@ const Application = () => {
     console.log("Toggle status for ID:", id);
   };
 
-  const filteredApplications = applications.filter(app =>
-    app.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    app.id.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredApplications = applications.filter(
+    (app) =>
+      app.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      app.id.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
@@ -66,9 +83,6 @@ const Application = () => {
           {/* Search and Upload Section */}
           <div className="controls-section">
             <div className="search-container">
-              <div className="search-icon">
-                <Search className="icon" />
-              </div>
               <input
                 type="text"
                 placeholder="Search by Job Role"
@@ -76,9 +90,11 @@ const Application = () => {
                 onChange={handleSearch}
                 className="search-input"
               />
+              <div className="search-icon">
+                <Search className="icon" />
+              </div>
             </div>
             <button onClick={handleUpload} className="upload-btn">
-              <Upload className="btn-icon" />
               Upload
             </button>
           </div>
@@ -90,47 +106,15 @@ const Application = () => {
                 <tr>
                   <th className="table-th">ID</th>
                   <th className="table-th">Name</th>
-                  <th className="table-th">Dpt Head</th>
-                  <th className="table-th">No of users</th>
-                  <th className="table-th-last">Action</th>
+                  <th className="table-th">Job Role</th>
+                  <th className="table-th">Rank</th>
+                  <th className="table-th">View Application</th>
+                  <th className="table-th-last">Summary</th>
                 </tr>
               </thead>
+
               <tbody className="table-body">
-                {filteredApplications.map((app, index) => (
-                  <tr key={app.id} className="table-row">
-                    <td className="table-td">{app.id}</td>
-                    <td className="table-td">{app.name}</td>
-                    <td className="table-td">{app.dptHead}</td>
-                    <td className="table-td">{app.noOfUsers}</td>
-                    <td className="table-td-last">
-                      <div className="action-buttons">
-                        <button
-                          onClick={() => handleEdit(app.id)}
-                          className="action-btn edit-btn"
-                          title="Edit"
-                        >
-                          <Edit className="action-icon" />
-                        </button>
-                        <button
-                          onClick={() => handleView(app.id)}
-                          className="action-btn view-btn"
-                          title="View"
-                        >
-                          <Eye className="action-icon" />
-                        </button>
-                        <label className="toggle-switch">
-                          <input
-                            type="checkbox"
-                            checked={app.isActive}
-                            onChange={() => toggleStatus(app.id)}
-                            className="toggle-input"
-                          />
-                          <div className="toggle-slider"></div>
-                        </label>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
+                
               </tbody>
             </table>
           </div>
@@ -138,9 +122,18 @@ const Application = () => {
           {/* Empty state */}
           {filteredApplications.length === 0 && (
             <div className="empty-state">
-              <p className="empty-message">No applications found matching your search.</p>
+              <p className="empty-message">
+                No applications found matching your search.
+              </p>
             </div>
           )}
+
+          {/* Upload Modal */}
+          <UploadModal
+            isOpen={isUploadModalOpen}
+            onClose={() => setIsUploadModalOpen(false)}
+            onUpload={handleUploadSubmit}
+          />
         </div>
       </div>
     </div>
