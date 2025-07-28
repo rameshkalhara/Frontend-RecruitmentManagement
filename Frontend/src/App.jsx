@@ -13,8 +13,8 @@ import Application from './pages/application/application.jsx';
 import JobProfile from './pages/jobProfile/jobProfile.jsx';
 import Vacancies from './pages/vacancies/vacancies.jsx';      
 import Candidates from './pages/candidates/candidates.jsx';
-
-
+import Logs from './pages/logs/logs.jsx'
+import Profile from './pages/profile/profile.jsx'
 
 
 function App() {
@@ -36,6 +36,8 @@ function App() {
           <Route path="/job-profile" element={<JobProfile />} />
           <Route path="/vacancies" element={<Vacancies />} />
           <Route path="/candidates" element={<Candidates />} />
+          <Route path="/logs" element={<Logs/>}/>
+          <Route path="/profile" element={<Profile/>}/>
           
 
           

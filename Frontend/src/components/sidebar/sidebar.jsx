@@ -76,7 +76,7 @@ const Sidebar = () => {
       </div>
 
       {/* User Section */}
-      <div className="sidebar-user">
+      <div className="sidebar-user" onClick={() => navigate("/profile")}>
         <div className="user-info">
           <div className="user-avatar">
             <img src={user} alt="ORELIT" className="user-icon" />
