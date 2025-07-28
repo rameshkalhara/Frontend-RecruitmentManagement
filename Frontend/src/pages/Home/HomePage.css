@@ -1,4 +1,4 @@
-/* HomePage.css */
+/* HomePage.css - Responsive Version */
 
 .homepage {
   min-height: 100vh;
@@ -7,22 +7,20 @@
 }
 
 .header {
-  background-color: #e71725; /* red */
+  background-color: #e71725;
   color: rgb(227, 108, 108);
-  padding: 5px;
+  padding: 1rem;
   text-align: center;
-  font-size: 24px;
-
   border-bottom-left-radius: 80% 80px;
-  border-bottom-right-radius:80% 80px;
-  
+  border-bottom-right-radius: 80% 80px;
 }
 
 .body {
   background-color: rgb(255, 255, 255);
-  flex: 1; /* Takes up the remaining vertical space */
-  padding: 20px;
+  flex: 1;
+  padding: 1rem 1.5rem; /* Reduced padding */
   font-size: 18px;
+  overflow-y: auto; /* Allow scrolling if needed */
 }
 
 .flex-container {
@@ -30,161 +28,91 @@
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  padding: -10px 30px;
+  padding: 0 2rem;
   box-sizing: border-box;
-  margin-bottom:0px;
-  
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-/* Image container */
+/* Image container - responsive */
 .image-container {
-  background-color: #e7172500;
-  width: 120px;
-  margin-left: 150px;
-  display: inline-block;
-  
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 130px;
 }
 
 .full-width-image {
-  width: 220px;
-  height: 120px;
-  margin-left: 220px;
-  
+  width: clamp(120px, 15vw, 220px);
+  height: auto;
+  aspect-ratio: 11/6; /* Maintains the original ratio */
   display: block;
-  
   
 }
 
-/* RMS text */
+/* RMS text - responsive */
 .rms-TextContainer {
-  
   text-align: center;
   flex: 1;
-  margin-bottom: 5px;
-  margin-left: 200px;
+  margin: 0 2rem;
+  
 }
 
 .rms-heading {
   font-family: 'Kanit', sans-serif;
   font-weight: 800;
-  font-size: 60px;
+  font-size: clamp(2.5rem, 6vw, 4rem); /* Responsive font size */
   color: #ffffff;
   margin: 0;
+  line-height: 1;
+  margin-left: 130px;
 }
 
 .rms-para {
   font-family: 'Kanit', sans-serif;
   font-weight: 600;
   color: #ffffff;
-  font-size: 12px;
-  margin-top: 1px;
+  font-size: clamp(0.75rem, 1.2vw, 1rem);
+  margin-top: 0.25rem;
+  margin-left: 130px;
 }
 
-/* Logout */
+/* Logout - responsive */
 .logout-container {
+  flex: 0 0 auto;
   text-align: right;
-  margin-top: 20px;
 }
 
 .logoutText {
   color: #ffffff;
   font-family: 'Kanit', sans-serif;
-  font-size: 18px;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
   cursor: pointer;
-  margin-right:20px;
+  transition: transform 0.2s ease;
+  margin-left: 130px;
 }
 
-.logoutText:hover{
-  transform: translateY(-5px);
-  
-
+.logoutText:hover {
+  transform: translateY(-3px);
 }
 
+/* Grid container - keeping your original layout */
 .grid-container {
   display: grid;
   grid-template-areas:
     'Departments Departments Users Users'
     'JobProfile Vacancies Application Candidates'
     'JobProfile Logs Profile Candidates';
-    
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  gap: 10px;
-  background-color: rgba(142, 139, 139, 0.089);
-  padding: 10px;
- /* Adjust as needed */
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: clamp(0.8rem, 1.5vw, 1.2rem);
   background-color: #f9f9f9;
-  padding:0px;
-}
-
-.grid-container > div {
-  background-color: #ffffff;
-  color: #000;
-  padding: 10px;
-  font-size: 30px;
-  text-align: center;
-  border-radius: 8px; /* Optional: adds rounded corners like in the image */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Kanit', sans-serif ;
-
-  box-shadow: 0 4px 8px rgba(55, 38, 38, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
-  cursor: pointer; /* Indicate it's clickable */
-  
-}
-
-.grid-container > div:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(37, 31, 31, 0.2);
-}
-
-.Departments { 
-  grid-area: Departments;
-  
-  
-}
-
-.Users { 
-  grid-area: Users;
- 
-}
-
-.JobProfile { 
-  grid-area: JobProfile;
-  
-}
-
-.Vacancies { 
-  grid-area: Vacancies;
-  
-}
-
-.Application { 
-  grid-area: Application;
-  
-}
-
-.Candidates { 
-  grid-area: Candidates;
-  
-}
-
-.Logs { 
-  grid-area: Logs;
-  
-}
-
-.Profile { 
-  grid-area: Profile;
-
+  padding: clamp(1rem, 2vw, 2rem);
+  border-radius: 12px;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 70vh; /* Maintains proportional height */
 }
 
 .grid-item {
@@ -193,11 +121,46 @@
   box-shadow: 0 4px 8px rgba(55, 38, 38, 0.1);
   text-align: center;
   transition: transform 0.2s ease, box-shadow 0.3s ease;
-  padding: 10px;
+  padding: clamp(0.8rem, 1.5vw, 1.2rem);
   cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  font-family: 'Kanit', sans-serif;
+}
+
+/* Individual grid items with your original positioning */
+.Departments { 
+  grid-area: Departments;
+}
+
+.Users { 
+  grid-area: Users;
+}
+
+.JobProfile { 
+  grid-area: JobProfile;
+}
+
+.Vacancies { 
+  grid-area: Vacancies;
+}
+
+.Application { 
+  grid-area: Application;
+}
+
+.Candidates { 
+  grid-area: Candidates;
+}
+
+.Logs { 
+  grid-area: Logs;
+}
+
+.Profile { 
+  grid-area: Profile;
 }
 
 .grid-item:hover {
@@ -206,14 +169,110 @@
 }
 
 .grid-item img {
-  width: 80px; /* Adjust size as needed */
-  height: 80px;
+  width: clamp(50px, 6vw, 70px); /* Reduced image size */
+  height: clamp(50px, 6vw, 70px);
   object-fit: contain;
-  margin-bottom: 10px;
+  margin-bottom: clamp(0.3rem, 0.8vw, 0.6rem);
 }
 
 .grid-item span {
-  font-size: 16px;
+  font-size: clamp(0.8rem, 1vw, 1rem); /* Slightly smaller text */
   font-weight: 600;
   color: #333;
+  font-family: 'Kanit', sans-serif;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1200px) {
+  .flex-container {
+    padding: 0 1rem;
+  }
+  
+  .body {
+    padding: 1rem;
+  }
+  
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0.8rem;
+  }
+  
+  .flex-container {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .rms-TextContainer {
+    margin: 0;
+  }
+  
+  .logout-container {
+    text-align: center;
+  }
+  
+  /* Keep original grid layout on mobile too, just smaller */
+  .grid-container {
+    grid-template-areas:
+      'Departments Departments Users Users'
+      'JobProfile Vacancies Application Candidates'
+      'JobProfile Logs Profile Candidates';
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 0.5rem;
+    padding: 0.8rem;
+    max-height: 55vh;
+  }
+  
+  .grid-item {
+    padding: 0.4rem;
+    min-height: clamp(60px, 7vh, 80px);
+  }
+  
+  .grid-item img {
+    width: clamp(35px, 5vw, 50px);
+    height: clamp(35px, 5vw, 50px);
+  }
+  
+  .grid-item span {
+    font-size: clamp(0.6rem, 0.8vw, 0.8rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .body {
+    padding: 0.5rem;
+  }
+  
+  /* Maintain original grid layout even on small phones */
+  .grid-container {
+    grid-template-areas:
+      'Departments Departments Users Users'
+      'JobProfile Vacancies Application Candidates'
+      'JobProfile Logs Profile Candidates';
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 0.4rem;
+    padding: 0.6rem;
+    max-height: 50vh;
+  }
+  
+  .grid-item {
+    padding: 0.3rem;
+    min-height: clamp(50px, 6vh, 70px);
+  }
+  
+  .grid-item img {
+    width: clamp(25px, 4vw, 40px);
+    height: clamp(25px, 4vw, 40px);
+  }
+  
+  .grid-item span {
+    font-size: clamp(0.5rem, 0.7vw, 0.7rem);
+  }
 }

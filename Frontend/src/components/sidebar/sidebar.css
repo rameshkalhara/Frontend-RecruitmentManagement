@@ -154,3 +154,31 @@
 }
 
 
+
+.sidebar-user {
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.user-icon:hover {
+  transform: translateY(2px); /* subtle lift */
+  transform: translateX(2px);
+  width: 58px;
+  height: 58px;
+
+  
+
+}
+
+.user-name:hover {
+  font-size: 25px;
+  transform: translateY(2px); /* subtle lift */
+  transform: translateX(2px);
+}
+
+.user-avatar:hover{
+  width: 85px;
+  height: 85px;
+}
